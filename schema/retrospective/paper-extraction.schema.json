@@ -1,0 +1,638 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/srimontidutta/solias/main/schema/retrospective/paper-extraction.schema.json",
+  "title": "SOLIAS Structured Paper Extraction",
+  "description": "Structured representation for retrospective application of SOLIAS in evidence synthesis, following the retrospective indicators described in the paper.",
+  "type": "object",
+  "required": [
+    "paper",
+    "claim_evidence_profile",
+    "demonstrated_evidence",
+    "claimed_outcome",
+    "prospective_components"
+  ],
+  "properties": {
+    "paper": {
+      "type": "object",
+      "required": [
+        "identifier",
+        "title"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "source": {
+          "type": "string"
+        }
+      }
+    },
+    "claim_evidence_profile": {
+      "type": "object",
+      "required": [
+        "E",
+        "C",
+        "G"
+      ],
+      "properties": {
+        "E": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Highest outcome level directly evaluated."
+        },
+        "C": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Highest outcome level presented as a result."
+        },
+        "G": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Claim-evidence gap, equal to max(0, C - E)."
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "E": {
+              "const": 0
+            },
+            "C": {
+              "const": 0
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 0
+            },
+            "C": {
+              "const": 1
+            },
+            "G": {
+              "const": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 0
+            },
+            "C": {
+              "const": 2
+            },
+            "G": {
+              "const": 2
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 0
+            },
+            "C": {
+              "const": 3
+            },
+            "G": {
+              "const": 3
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 0
+            },
+            "C": {
+              "const": 4
+            },
+            "G": {
+              "const": 4
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 0
+            },
+            "C": {
+              "const": 5
+            },
+            "G": {
+              "const": 5
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 1
+            },
+            "C": {
+              "const": 0
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 1
+            },
+            "C": {
+              "const": 1
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 1
+            },
+            "C": {
+              "const": 2
+            },
+            "G": {
+              "const": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 1
+            },
+            "C": {
+              "const": 3
+            },
+            "G": {
+              "const": 2
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 1
+            },
+            "C": {
+              "const": 4
+            },
+            "G": {
+              "const": 3
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 1
+            },
+            "C": {
+              "const": 5
+            },
+            "G": {
+              "const": 4
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 2
+            },
+            "C": {
+              "const": 0
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 2
+            },
+            "C": {
+              "const": 1
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 2
+            },
+            "C": {
+              "const": 2
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 2
+            },
+            "C": {
+              "const": 3
+            },
+            "G": {
+              "const": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 2
+            },
+            "C": {
+              "const": 4
+            },
+            "G": {
+              "const": 2
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 2
+            },
+            "C": {
+              "const": 5
+            },
+            "G": {
+              "const": 3
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 3
+            },
+            "C": {
+              "const": 0
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 3
+            },
+            "C": {
+              "const": 1
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 3
+            },
+            "C": {
+              "const": 2
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 3
+            },
+            "C": {
+              "const": 3
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 3
+            },
+            "C": {
+              "const": 4
+            },
+            "G": {
+              "const": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 3
+            },
+            "C": {
+              "const": 5
+            },
+            "G": {
+              "const": 2
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 4
+            },
+            "C": {
+              "const": 0
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 4
+            },
+            "C": {
+              "const": 1
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 4
+            },
+            "C": {
+              "const": 2
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 4
+            },
+            "C": {
+              "const": 3
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 4
+            },
+            "C": {
+              "const": 4
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 4
+            },
+            "C": {
+              "const": 5
+            },
+            "G": {
+              "const": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 5
+            },
+            "C": {
+              "const": 0
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 5
+            },
+            "C": {
+              "const": 1
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 5
+            },
+            "C": {
+              "const": 2
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 5
+            },
+            "C": {
+              "const": 3
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 5
+            },
+            "C": {
+              "const": 4
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "E": {
+              "const": 5
+            },
+            "C": {
+              "const": 5
+            },
+            "G": {
+              "const": 0
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "demonstrated_evidence": {
+      "type": "object",
+      "required": [
+        "description",
+        "supporting_reference"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Highest outcome directly evaluated, described in relation to the population, context, and measures reported in the paper."
+        },
+        "supporting_reference": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Page, section, table, figure, or other source location supporting E."
+        }
+      }
+    },
+    "claimed_outcome": {
+      "type": "object",
+      "required": [
+        "description",
+        "supporting_reference"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Highest outcome presented as a result, with motivation and intended use distinguished where possible."
+        },
+        "supporting_reference": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Page, section, or other source location supporting C."
+        }
+      }
+    },
+    "prospective_components": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "social_problem_target_population_stakeholders": {
+          "$ref": "#/$defs/observation"
+        },
+        "nlp_function_and_use_context": {
+          "$ref": "#/$defs/observation"
+        },
+        "theory_of_change": {
+          "$ref": "#/$defs/observation"
+        },
+        "outcome_evaluation": {
+          "$ref": "#/$defs/observation"
+        },
+        "equity_accessibility_safety_failure_to_harm_maintenance": {
+          "$ref": "#/$defs/observation"
+        },
+        "evidence_calibrated_conclusion": {
+          "$ref": "#/$defs/observation"
+        },
+        "evaluation_validity": {
+          "$ref": "#/$defs/observation"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "observation": {
+      "type": "object",
+      "required": [
+        "status",
+        "description",
+        "supporting_reference"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "present",
+            "absent",
+            "unclear",
+            "not_applicable"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "supporting_reference": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

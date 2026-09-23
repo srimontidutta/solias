@@ -1,0 +1,73 @@
+solias_version: pre-publication
+purpose_and_population:
+  social_problem: People have difficulty locating relevant emergency guidance during
+    severe-weather events.
+  target_population: Adults seeking online emergency information in the evaluated
+    jurisdiction.
+  excluded_or_at_risk_groups: Non-English speakers, screen-reader users, and people
+    without reliable internet access were not evaluated.
+  intended_outcome: Timely access to evacuation guidance and emergency-support services.
+  stakeholders: Residents, emergency-management agencies, service providers, and community
+    organizations.
+system_and_pathway:
+  nlp_function: Retrieves and summarizes official emergency guidance with source links.
+  use_context: Resident-facing information support during severe-weather emergencies;
+    not a replacement for official alerts.
+  theory_of_change: Easier access to relevant guidance may improve information use
+    and, subsequently, emergency decisions.
+evidence_and_alignment:
+  claim_evidence_profile:
+    E: 2
+    C: 2
+    G: 0
+  demonstrated_evidence:
+    measured_outcome: Correct guidance identification in a simulated emergency-information
+      task.
+    population: Adults seeking online emergency information in the evaluated jurisdiction.
+    context: Simulated emergency-information task.
+    evaluation_setting: User task performance evaluation.
+  claimed_outcome:
+    claim: Improved guidance identification.
+    claim_reference: Illustrative example in the SOLIAS paper.
+    unevaluated_transitions: ''
+  evaluation_measures:
+    description: Correct guidance identification and task-completion time.
+    timing: During the simulated task.
+    comparison_conditions: Assistant versus the existing information page.
+    interpretation: The measures evaluate user task performance in the simulated emergency-information
+      setting.
+outcome_evaluation:
+  output_quality:
+    status: evaluated
+    response: 94% of sampled responses were consistent with the cited official source.
+  user_outcome:
+    status: evaluated
+    response: 'Correct guidance identification: 84% with the assistant versus 67%
+      with the existing information page.'
+  decision_or_behavior:
+    status: not_evaluated
+    response: Decision or behavior outcomes were not evaluated in this illustrative
+      study.
+  operational_outcome:
+    status: not_evaluated
+    response: Operational outcomes were not evaluated in this illustrative study.
+  social_outcome:
+    status: not_evaluated
+    response: Social outcomes were not evaluated in this illustrative study.
+responsible_operation:
+  equity_and_accessibility:
+    status: addressed
+    response: Accessibility, multilingual use, and limited-connectivity settings require
+      separate evaluation.
+  safety_and_failure_to_harm:
+    status: addressed
+    response: Responses cite official sources; uncertain or conflicting cases direct
+      users to current alerts or responsible authorities.
+  maintenance_and_monitoring:
+    status: addressed
+    response: Guidance is versioned and reviewed when emergency policies, resources,
+      or contact information change.
+calibrated_conclusion:
+  evidence_calibrated_conclusion: The assistant improved identification of appropriate
+    emergency guidance in the evaluated task; effects on actual emergency behavior
+    and outcomes were not evaluated.

@@ -1,0 +1,11 @@
+# Boundary Cases for Evidence-Level Assignment
+
+Level assignment follows the outcome that is measured rather than the name of the study design, the presence of human participants, or the fact of deployment.
+
+| Evaluation described in the paper | Level | Operational interpretation |
+| --- | --- | --- |
+| Participants judge the factuality, clarity, usefulness, or harmfulness of system outputs | 1 | The measured object is a property of the output, even though human participants provide the judgment. |
+| Participants use the system to complete an information-finding, comprehension, or other task, and task success is measured | 2 | The measured object is an outcome for the user in the evaluated task rather than a rating of the output itself. |
+| A practitioner uses the system and the study measures a consequential decision or action, such as a referral, moderation action, or triage choice | 3 | The measured object is a decision or behavior by the relevant actor. Participation by practitioners without such a measured decision remains at the level of the outcome actually evaluated. |
+| A system is deployed, but evaluation remains limited to offline accuracy or output quality | 0 or 1 | Deployment describes the setting and does not determine the evidence level. A Level 4 assignment requires measurement of an operational outcome such as processing time, workload, service uptake, or institutional response. |
+| A randomized, longitudinal, or field design measures only task success or a professional decision, rather than a population or community outcome | 2 or 3 | Study design affects the credibility of the estimate but does not by itself raise the SOLIAS level. Level 5 requires measurement of the relevant social outcome for the defined population and context. |

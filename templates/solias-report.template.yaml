@@ -1,0 +1,59 @@
+# Fill every null value before validation. Use not_applicable only with a stated reason in the corresponding response.
+solias_version: pre-publication
+purpose_and_population:
+  social_problem: null
+  target_population: null
+  excluded_or_at_risk_groups: null
+  intended_outcome: null
+  stakeholders: null
+system_and_pathway:
+  nlp_function: null
+  use_context: null
+  theory_of_change: null
+evidence_and_alignment:
+  claim_evidence_profile:
+    E: null
+    C: null
+    G: null
+  demonstrated_evidence:
+    measured_outcome: null
+    population: null
+    context: null
+    evaluation_setting: null
+  claimed_outcome:
+    claim: null
+    claim_reference: null
+    unevaluated_transitions: ''
+  evaluation_measures:
+    description: null
+    timing: null
+    comparison_conditions: null
+    interpretation: null
+outcome_evaluation:
+  output_quality:
+    status: null
+    response: null
+  user_outcome:
+    status: null
+    response: null
+  decision_or_behavior:
+    status: null
+    response: null
+  operational_outcome:
+    status: null
+    response: null
+  social_outcome:
+    status: null
+    response: null
+responsible_operation:
+  equity_and_accessibility:
+    status: null
+    response: null
+  safety_and_failure_to_harm:
+    status: null
+    response: null
+  maintenance_and_monitoring:
+    status: null
+    response: null
+calibrated_conclusion:
+  evidence_calibrated_conclusion: null

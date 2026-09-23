@@ -1,0 +1,287 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/srimontidutta/solias/main/schema/claim-evidence-profile.schema.json
+title: SOLIAS Claim-Evidence Profile
+description: Machine-readable representation of the SOLIAS (E, C, G) profile. The
+  permitted combinations enforce G = max(0, C - E).
+type: object
+required:
+- E
+- C
+- G
+properties:
+  E:
+    type: integer
+    minimum: 0
+    maximum: 5
+    description: Highest outcome level directly evaluated.
+  C:
+    type: integer
+    minimum: 0
+    maximum: 5
+    description: Highest outcome level presented as a result.
+  G:
+    type: integer
+    minimum: 0
+    maximum: 5
+    description: Claim-evidence gap, equal to max(0, C - E).
+oneOf:
+- properties:
+    E:
+      const: 0
+    C:
+      const: 0
+    G:
+      const: 0
+- properties:
+    E:
+      const: 0
+    C:
+      const: 1
+    G:
+      const: 1
+- properties:
+    E:
+      const: 0
+    C:
+      const: 2
+    G:
+      const: 2
+- properties:
+    E:
+      const: 0
+    C:
+      const: 3
+    G:
+      const: 3
+- properties:
+    E:
+      const: 0
+    C:
+      const: 4
+    G:
+      const: 4
+- properties:
+    E:
+      const: 0
+    C:
+      const: 5
+    G:
+      const: 5
+- properties:
+    E:
+      const: 1
+    C:
+      const: 0
+    G:
+      const: 0
+- properties:
+    E:
+      const: 1
+    C:
+      const: 1
+    G:
+      const: 0
+- properties:
+    E:
+      const: 1
+    C:
+      const: 2
+    G:
+      const: 1
+- properties:
+    E:
+      const: 1
+    C:
+      const: 3
+    G:
+      const: 2
+- properties:
+    E:
+      const: 1
+    C:
+      const: 4
+    G:
+      const: 3
+- properties:
+    E:
+      const: 1
+    C:
+      const: 5
+    G:
+      const: 4
+- properties:
+    E:
+      const: 2
+    C:
+      const: 0
+    G:
+      const: 0
+- properties:
+    E:
+      const: 2
+    C:
+      const: 1
+    G:
+      const: 0
+- properties:
+    E:
+      const: 2
+    C:
+      const: 2
+    G:
+      const: 0
+- properties:
+    E:
+      const: 2
+    C:
+      const: 3
+    G:
+      const: 1
+- properties:
+    E:
+      const: 2
+    C:
+      const: 4
+    G:
+      const: 2
+- properties:
+    E:
+      const: 2
+    C:
+      const: 5
+    G:
+      const: 3
+- properties:
+    E:
+      const: 3
+    C:
+      const: 0
+    G:
+      const: 0
+- properties:
+    E:
+      const: 3
+    C:
+      const: 1
+    G:
+      const: 0
+- properties:
+    E:
+      const: 3
+    C:
+      const: 2
+    G:
+      const: 0
+- properties:
+    E:
+      const: 3
+    C:
+      const: 3
+    G:
+      const: 0
+- properties:
+    E:
+      const: 3
+    C:
+      const: 4
+    G:
+      const: 1
+- properties:
+    E:
+      const: 3
+    C:
+      const: 5
+    G:
+      const: 2
+- properties:
+    E:
+      const: 4
+    C:
+      const: 0
+    G:
+      const: 0
+- properties:
+    E:
+      const: 4
+    C:
+      const: 1
+    G:
+      const: 0
+- properties:
+    E:
+      const: 4
+    C:
+      const: 2
+    G:
+      const: 0
+- properties:
+    E:
+      const: 4
+    C:
+      const: 3
+    G:
+      const: 0
+- properties:
+    E:
+      const: 4
+    C:
+      const: 4
+    G:
+      const: 0
+- properties:
+    E:
+      const: 4
+    C:
+      const: 5
+    G:
+      const: 1
+- properties:
+    E:
+      const: 5
+    C:
+      const: 0
+    G:
+      const: 0
+- properties:
+    E:
+      const: 5
+    C:
+      const: 1
+    G:
+      const: 0
+- properties:
+    E:
+      const: 5
+    C:
+      const: 2
+    G:
+      const: 0
+- properties:
+    E:
+      const: 5
+    C:
+      const: 3
+    G:
+      const: 0
+- properties:
+    E:
+      const: 5
+    C:
+      const: 4
+    G:
+      const: 0
+- properties:
+    E:
+      const: 5
+    C:
+      const: 5
+    G:
+      const: 0
+additionalProperties: false
+examples:
+- E: 2
+  C: 2
+  G: 0
+- E: 0
+  C: 4
+  G: 4

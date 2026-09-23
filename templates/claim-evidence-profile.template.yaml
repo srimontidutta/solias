@@ -1,0 +1,4 @@
+# Fill E and C, then set G = max(0, C - E). The completed record must validate against claim-evidence-profile.schema.yaml.
+E: null
+C: null
+G: null

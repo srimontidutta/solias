@@ -1,0 +1,605 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/srimontidutta/solias/main/schema/solias-report.schema.json
+title: SOLIAS Report
+description: Machine-readable representation of the prospective SOLIAS reporting standard.
+type: object
+required:
+- solias_version
+- purpose_and_population
+- system_and_pathway
+- evidence_and_alignment
+- outcome_evaluation
+- responsible_operation
+- calibrated_conclusion
+properties:
+  solias_version:
+    type: string
+    minLength: 1
+    description: Version of the SOLIAS specification used to complete the report.
+  purpose_and_population:
+    type: object
+    additionalProperties: false
+    required:
+    - social_problem
+    - target_population
+    - excluded_or_at_risk_groups
+    - intended_outcome
+    - stakeholders
+    properties:
+      social_problem:
+        type: string
+        minLength: 1
+        description: Specific need, inequity, risk, or service problem and the setting
+          in which it occurs.
+      target_population:
+        type: string
+        minLength: 1
+        description: Population characteristics relevant to intended use and evaluation.
+      excluded_or_at_risk_groups:
+        type: string
+        minLength: 1
+        description: Relevant groups and plausible mechanisms of exclusion, burden,
+          or harm.
+      intended_outcome:
+        type: string
+        minLength: 1
+        description: Longer-term user, operational, or social outcome motivating the
+          research program.
+      stakeholders:
+        type: string
+        minLength: 1
+        description: Users, practitioners, institutions, maintainers, affected non-users,
+          and other relevant stakeholders.
+  system_and_pathway:
+    type: object
+    additionalProperties: false
+    required:
+    - nlp_function
+    - use_context
+    - theory_of_change
+    properties:
+      nlp_function:
+        type: string
+        minLength: 1
+        description: Task, input, output, and role of the language component.
+      use_context:
+        type: string
+        minLength: 1
+        description: Setting, user role, workflow, available resources, and relevant
+          constraints.
+      theory_of_change:
+        type: string
+        minLength: 1
+        description: Intermediate user actions, institutional responses, assumptions,
+          and dependencies connecting the NLP function to the intended outcome.
+  evidence_and_alignment:
+    type: object
+    additionalProperties: false
+    required:
+    - claim_evidence_profile
+    - demonstrated_evidence
+    - claimed_outcome
+    - evaluation_measures
+    properties:
+      claim_evidence_profile:
+        type: object
+        required:
+        - E
+        - C
+        - G
+        additionalProperties: false
+        properties:
+          E:
+            type: integer
+            minimum: 0
+            maximum: 5
+            description: Highest outcome level directly evaluated.
+          C:
+            type: integer
+            minimum: 0
+            maximum: 5
+            description: Highest outcome level presented as a result.
+          G:
+            type: integer
+            minimum: 0
+            maximum: 5
+            description: Claim-evidence gap, equal to max(0, C - E).
+        oneOf:
+        - properties:
+            E:
+              const: 0
+            C:
+              const: 0
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 0
+            C:
+              const: 1
+            G:
+              const: 1
+        - properties:
+            E:
+              const: 0
+            C:
+              const: 2
+            G:
+              const: 2
+        - properties:
+            E:
+              const: 0
+            C:
+              const: 3
+            G:
+              const: 3
+        - properties:
+            E:
+              const: 0
+            C:
+              const: 4
+            G:
+              const: 4
+        - properties:
+            E:
+              const: 0
+            C:
+              const: 5
+            G:
+              const: 5
+        - properties:
+            E:
+              const: 1
+            C:
+              const: 0
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 1
+            C:
+              const: 1
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 1
+            C:
+              const: 2
+            G:
+              const: 1
+        - properties:
+            E:
+              const: 1
+            C:
+              const: 3
+            G:
+              const: 2
+        - properties:
+            E:
+              const: 1
+            C:
+              const: 4
+            G:
+              const: 3
+        - properties:
+            E:
+              const: 1
+            C:
+              const: 5
+            G:
+              const: 4
+        - properties:
+            E:
+              const: 2
+            C:
+              const: 0
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 2
+            C:
+              const: 1
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 2
+            C:
+              const: 2
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 2
+            C:
+              const: 3
+            G:
+              const: 1
+        - properties:
+            E:
+              const: 2
+            C:
+              const: 4
+            G:
+              const: 2
+        - properties:
+            E:
+              const: 2
+            C:
+              const: 5
+            G:
+              const: 3
+        - properties:
+            E:
+              const: 3
+            C:
+              const: 0
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 3
+            C:
+              const: 1
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 3
+            C:
+              const: 2
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 3
+            C:
+              const: 3
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 3
+            C:
+              const: 4
+            G:
+              const: 1
+        - properties:
+            E:
+              const: 3
+            C:
+              const: 5
+            G:
+              const: 2
+        - properties:
+            E:
+              const: 4
+            C:
+              const: 0
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 4
+            C:
+              const: 1
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 4
+            C:
+              const: 2
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 4
+            C:
+              const: 3
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 4
+            C:
+              const: 4
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 4
+            C:
+              const: 5
+            G:
+              const: 1
+        - properties:
+            E:
+              const: 5
+            C:
+              const: 0
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 5
+            C:
+              const: 1
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 5
+            C:
+              const: 2
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 5
+            C:
+              const: 3
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 5
+            C:
+              const: 4
+            G:
+              const: 0
+        - properties:
+            E:
+              const: 5
+            C:
+              const: 5
+            G:
+              const: 0
+      demonstrated_evidence:
+        type: object
+        additionalProperties: false
+        required:
+        - measured_outcome
+        - population
+        - context
+        - evaluation_setting
+        properties:
+          measured_outcome:
+            type: string
+            minLength: 1
+            description: Outcome directly measured at evidence level E.
+          population:
+            type: string
+            minLength: 1
+            description: Population for which the demonstrated outcome was evaluated.
+          context:
+            type: string
+            minLength: 1
+            description: Context in which the demonstrated outcome was evaluated.
+          evaluation_setting:
+            type: string
+            minLength: 1
+            description: Study or evaluation setting supporting the demonstrated outcome.
+      claimed_outcome:
+        type: object
+        additionalProperties: false
+        required:
+        - claim
+        - claim_reference
+        - unevaluated_transitions
+        properties:
+          claim:
+            type: string
+            minLength: 1
+            description: Highest outcome presented as a result.
+          claim_reference:
+            type: string
+            minLength: 1
+            description: Page, section, or other location of the relevant claim.
+          unevaluated_transitions:
+            type: string
+            description: Outcome transitions represented in the claim that remain
+              unevaluated. An empty string is permitted when G = 0.
+      evaluation_measures:
+        type: object
+        additionalProperties: false
+        required:
+        - description
+        - timing
+        - comparison_conditions
+        - interpretation
+        properties:
+          description:
+            type: string
+            minLength: 1
+            description: Measures used for the evaluated outcome.
+          timing:
+            type: string
+            minLength: 1
+            description: Timing of measurement.
+          comparison_conditions:
+            type: string
+            minLength: 1
+            description: Comparison or reference condition.
+          interpretation:
+            type: string
+            minLength: 1
+            description: Reason the selected measures represent the evaluated outcome.
+  outcome_evaluation:
+    type: object
+    additionalProperties: false
+    required:
+    - output_quality
+    - user_outcome
+    - decision_or_behavior
+    - operational_outcome
+    - social_outcome
+    properties:
+      output_quality:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - evaluated
+            - not_evaluated
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Criteria and findings for output properties relevant to intended
+              use, or the reason the item is not applicable.
+      user_outcome:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - evaluated
+            - not_evaluated
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Population, task, study setting, comparison, and outcome
+              measure, or the reason the item is not applicable.
+      decision_or_behavior:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - evaluated
+            - not_evaluated
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Actor, decision or action, comparison condition, and measured
+              effect, or the reason the item is not applicable.
+      operational_outcome:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - evaluated
+            - not_evaluated
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Operational setting, process, comparison, timeframe, and
+              outcome measure, or the reason the item is not applicable.
+      social_outcome:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - evaluated
+            - not_evaluated
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Population, setting, study design, outcome, timeframe, and
+              causal assumptions, or the reason the item is not applicable.
+  responsible_operation:
+    type: object
+    additionalProperties: false
+    required:
+    - equity_and_accessibility
+    - safety_and_failure_to_harm
+    - maintenance_and_monitoring
+    properties:
+      equity_and_accessibility:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - addressed
+            - not_addressed
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Relevant groups and barriers, distributional estimates where
+              applicable, and evaluation or mitigation measures, or the reason the
+              item is not applicable.
+      safety_and_failure_to_harm:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - addressed
+            - not_addressed
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Failure mode, exposure pathway, consequence, detection, escalation,
+              and mitigation, or the reason the item is not applicable.
+      maintenance_and_monitoring:
+        type: object
+        required:
+        - status
+        - response
+        additionalProperties: false
+        properties:
+          status:
+            type: string
+            enum:
+            - addressed
+            - not_addressed
+            - not_applicable
+          response:
+            type: string
+            minLength: 1
+            description: Monitoring responsibilities, drift, policy or service changes,
+              update criteria, and retirement conditions, or the reason the item is
+              not applicable.
+  calibrated_conclusion:
+    type: object
+    additionalProperties: false
+    required:
+    - evidence_calibrated_conclusion
+    properties:
+      evidence_calibrated_conclusion:
+        type: string
+        minLength: 1
+        description: Statement of the demonstrated outcome for the evaluated population
+          and context, with broader intended outcomes identified as prospective.
+additionalProperties: false
