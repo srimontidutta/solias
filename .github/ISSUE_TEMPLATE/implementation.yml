@@ -1,0 +1,24 @@
+name: Implementation problem
+description: Report an implementation problem encountered while applying SOLIAS in study design, writing, review, evidence synthesis, or machine-readable reporting.
+title: "[Implementation] "
+labels: [implementation]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Application context
+      description: Describe the research, review, venue, or synthesis setting.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Implementation problem
+      description: Describe where the current materials were difficult to apply or interpret.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed clarification or guidance
+      description: If available, describe the change that would resolve the problem while preserving the core classification.

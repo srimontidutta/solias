@@ -1,0 +1,31 @@
+name: Core classification change
+description: Propose a substantive change to the evidence-level ontology, (E, C, G) representation, or another part of the common classification.
+title: "[Core change] "
+labels: [core-change]
+body:
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected part of the standard
+      description: Identify the evidence level, representation, definition, or field that would change.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Empirical or conceptual rationale
+      description: Provide the evidence or reasoning supporting the proposed revision.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility implications
+      description: Describe the effect on previously completed forms, machine-readable records, domain profiles, and evidence syntheses.
+    validations:
+      required: true
+  - type: textarea
+    id: migration
+    attributes:
+      label: Migration considerations
+      description: Describe how prior records could remain interpretable if the change were adopted.

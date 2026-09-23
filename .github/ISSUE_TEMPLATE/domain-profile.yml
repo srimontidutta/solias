@@ -1,0 +1,30 @@
+name: Domain profile proposal
+description: Propose domain-specific examples, measures, safeguards, or implementation guidance that preserves the core SOLIAS classification.
+title: "[Domain profile] "
+labels: [domain-profile]
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Domain or application setting
+    validations:
+      required: true
+  - type: textarea
+    id: guidance
+    attributes:
+      label: Proposed profile content
+      description: Describe the examples, measures, safeguards, or implementation guidance to be added.
+    validations:
+      required: true
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: Relevant stakeholders and evidence
+      description: Describe the stakeholders consulted or affected and any supporting evidence or implementation experience.
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility with the core standard
+      description: Explain how the proposal preserves the meanings of the six evidence levels and the (E, C, G) representation.
+    validations:
+      required: true
