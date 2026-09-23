@@ -1,0 +1,24 @@
+name: Clarification request
+description: Request clarification of an existing SOLIAS definition, checklist item, schema field, or example.
+title: "[Clarification] "
+labels: [clarification]
+body:
+  - type: textarea
+    id: item
+    attributes:
+      label: Definition or item
+      description: Identify the evidence level, checklist item, schema field, template, or example that needs clarification.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Clarification requested
+      description: Describe the interpretation question and the context in which it arose.
+    validations:
+      required: true
+  - type: textarea
+    id: implications
+    attributes:
+      label: Compatibility or reporting implications
+      description: Note any effect the clarification may have on completed forms, reports, or machine-readable records.
