@@ -4,7 +4,7 @@
 
 **Srimonti Dutta · Akshata Kishore Moharir**
 
-SOLIAS (Social Outcomes for Language-Integrated AI Systems) is a reporting format for relating social-impact claims in NLP to the outcomes a study directly evaluates. It combines six evidence levels, a claim-evidence profile `(E, C, G)`, and a 20-item checklist covering the population, context, pathway, evaluation, responsible-operation conditions, and scope of the conclusion.
+SOLIAS (Social Outcomes for Language-Integrated AI Systems) is a reporting framework for relating social-impact claims in NLP to the outcomes a study directly evaluates. It combines six evidence levels, a claim-evidence profile `(E, C, G)`, and a 20-item checklist covering the population, context, pathway, evaluation, responsible-operation conditions, and scope of the conclusion.
 
 **Publication status:** The paper is forthcoming. Publication and citation information will be added after release.
 
